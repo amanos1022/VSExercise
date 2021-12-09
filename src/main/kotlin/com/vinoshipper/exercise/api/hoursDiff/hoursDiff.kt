@@ -6,8 +6,11 @@ import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
 
 
-//fun hoursDiff(dateTime1: LocalDateTime, dateTime2: LocalDateTime): Int {
-////    dateTime1.until(local)
-//    //rounded
-//
-//}
+fun hoursDiff(dateTime1: LocalDateTime, dateTime2: LocalDateTime): Long {
+    val numWeekdays : Long = getWeekDays(
+        LocalDate.of(dateTime1.year, dateTime1.monthValue, dateTime1.dayOfMonth),
+        LocalDate.of(dateTime2.year, dateTime2.monthValue, dateTime2.dayOfMonth),
+    )
+
+    return 0;
+}
