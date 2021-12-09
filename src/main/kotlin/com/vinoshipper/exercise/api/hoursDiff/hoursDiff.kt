@@ -12,5 +12,8 @@ fun hoursDiff(dateTime1: LocalDateTime, dateTime2: LocalDateTime): Long {
         LocalDate.of(dateTime2.year, dateTime2.monthValue, dateTime2.dayOfMonth),
     )
 
-    return 0;
+    val hoursWorkedOnStartDay = hoursWorkedInDay(dateTime1)
+    val hoursLeftinEndDay = hoursLeftInDay(dateTime2)
+
+    return (numWeekdays * 8) - hoursWorkedOnStartDay + hoursLeftinEndDay
 }

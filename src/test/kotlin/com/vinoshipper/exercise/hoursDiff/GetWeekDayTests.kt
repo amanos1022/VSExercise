@@ -21,9 +21,13 @@ class GetWeekDayTests {
     }
 
     @Test
-    fun manual_solutions() {
-        assert(getWeekDays(LocalDate.now(), LocalDate.now()) == 0L);
+    fun success_tests() {
+        assert(getWeekDays(LocalDate.now(), LocalDate.now()) == 1L);
         assert(getWeekDays(LocalDate.parse("2021-12-09"), LocalDate.parse("2021-12-12")) == 2L);
         assert(getWeekDays(LocalDate.parse("2021-12-09"), LocalDate.parse("2021-12-25")) == 12L);
+        assert(getWeekDays(LocalDate.parse("2021-12-09"), LocalDate.parse("2021-12-09")) == 1L);
+        assert(getWeekDays(LocalDate.parse("2021-12-11"), LocalDate.parse("2021-12-11")) == 0L); // weekend 1 day
+        assert(getWeekDays(LocalDate.parse("2021-01-01"), LocalDate.parse("2021-12-31")) == 261L);
+
     }
 }
