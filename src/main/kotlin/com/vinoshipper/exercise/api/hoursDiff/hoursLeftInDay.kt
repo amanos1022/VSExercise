@@ -1,9 +1,14 @@
 package com.vinoshipper.exercise.api.hoursDiff
 
+import java.time.DayOfWeek
 import java.time.LocalDateTime
 
 fun hoursLeftInDay(day: LocalDateTime) : Int {
     // todo: test for sunday and monday
+    if(day.dayOfWeek == DayOfWeek.SATURDAY || day.dayOfWeek == DayOfWeek.SUNDAY){
+        return 0;
+    }
+
     if(day.hour >= 17){
         return 0; // if end of day, we've worked all hours, keep em in
     }

@@ -13,4 +13,10 @@ class HoursWorkedInDayTests {
         assert(0 == hoursWorkedInDay(LocalDateTime.parse("2021-12-09T07:00:00")))
         assert(8 == hoursWorkedInDay(LocalDateTime.parse("2021-12-09T20:00:00")))
     }
+
+    @Test
+    fun weekends_test() {
+        assert(0 == hoursWorkedInDay(LocalDateTime.parse("2021-12-11T07:00:00")))
+        assert(0 == hoursWorkedInDay(LocalDateTime.parse("2021-12-12T07:00:00")))
+    }
 }
