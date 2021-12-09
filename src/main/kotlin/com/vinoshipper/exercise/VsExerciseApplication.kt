@@ -9,3 +9,4 @@ class VsExerciseApplication
 fun main(args: Array<String>) {
 	runApplication<VsExerciseApplication>(*args)
 }
+
