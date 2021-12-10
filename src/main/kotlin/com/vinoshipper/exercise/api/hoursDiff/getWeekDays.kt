@@ -7,7 +7,7 @@ import java.time.temporal.ChronoUnit
 
 fun getWeekDays(start: LocalDate, end: LocalDate): Long {
     if(end.isBefore(start)){
-        throw FutureDateException()
+        throw EndBeforeStartException()
     }
 
     if(start == end){
@@ -32,6 +32,4 @@ fun getWeekDays(start: LocalDate, end: LocalDate): Long {
     }
 
     return daysWithoutWeekends
-    //adjust for starting and ending on a Sunday:
-//    return daysWithoutWeekends + (if (startW == DayOfWeek.SUNDAY) 1 else 0) + if (endW == DayOfWeek.SUNDAY) 1 else 0
 }

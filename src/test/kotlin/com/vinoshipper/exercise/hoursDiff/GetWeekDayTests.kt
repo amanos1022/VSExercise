@@ -1,14 +1,11 @@
 package com.vinoshipper.exercise.hoursDiff
 
-import com.vinoshipper.exercise.api.bouncer.FutureDateException
-import com.vinoshipper.exercise.api.bouncer.bouncer
+import com.vinoshipper.exercise.api.hoursDiff.EndBeforeStartException
 import com.vinoshipper.exercise.api.hoursDiff.getWeekDays
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 import org.springframework.boot.test.context.SpringBootTest
 import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.format.DateTimeParseException
 
 @SpringBootTest
 class GetWeekDayTests {
@@ -16,8 +13,7 @@ class GetWeekDayTests {
     fun failed_input() {
         val endBeforeStart: () -> Unit = { getWeekDays(LocalDate.now(), LocalDate.parse("2020-01-01")) }
 
-        // TODO: Make separate exception for this!
-        assertThrows<FutureDateException>(endBeforeStart)
+        assertThrows<EndBeforeStartException>(endBeforeStart)
     }
 
     @Test
